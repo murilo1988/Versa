@@ -4,7 +4,7 @@ const path = require("path");
 // destination image store
 
 const imageStorege = multer.diskStorage({
-  destination: function (req, res, cb) {
+  destination: (req, res, cb) => {
     let folder = "";
     if (req.baseUrl.includes("users")) {
       folder = "users";
@@ -20,8 +20,9 @@ const imageStorege = multer.diskStorage({
 });
 
 const imageUpload = multer({
+  storage: imageStorege,
   fileFilter(req, file, cb) {
-    if (file.originalname.match(/\.(png | jpg)$/)) {
+    if (!file.originalname.match(/\.(png|PNG|jpg|JPG)$/)) {
       //upload only png and jpg formats
       return cb(new Error("Somente formatos png e jpg por favor"));
     }
