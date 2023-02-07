@@ -7,8 +7,10 @@ The idea is to practice and improve the knowledge already acquired during these 
 
 # Technologies
 
-// BACKEND
+* BACKEND
+
 NodeJs, Mongoose, MongoDB, Express, Express-validator, JWT, Multer, cors, bcrypt and more ...
 
-// FRONTEND
+* FRONTEND
+
 JavaScript, ReactJs, CSS and more...
