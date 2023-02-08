@@ -127,6 +127,45 @@ const updatePhoto = async (req, res) => {
     res.status(422).json("Houve um problema, por favor tente mais tarde.");
   }
 };
+//like functionally
+const likePhoto = async (req, res) => {
+  const { id } = req.params;
+  const reqUser = req.user;
+
+  try {
+    const photo = await Photo.findById(id);
+    //check if photo exist
+    if (!photo) {
+      res.status(404).json({ errors: ["Foto não encontrada"] });
+      return;
+    }
+
+    //check if user already liked the photo
+    if (!photo.likes.includes(reqUser._id)) {
+      // put user id in array of like
+      photo.likes.push(reqUser._id);
+      res.status(200).json({
+        photoID: id,
+        userId: reqUser._id,
+        message: "A foto foi curtida",
+      });
+    } else {
+      photo.likes.remove(reqUser._id);
+
+      res.status(202).json({
+        photoID: id,
+        userId: reqUser._id,
+        message: "A foto foi descurtida",
+      });
+    }
+
+    await photo.save();
+  } catch (error) {
+    res
+      .status(422)
+      .json({ errors: ["Ocorreu algum problema, por favor tente mais tarde"] });
+  }
+};
 module.exports = {
   insertPhoto,
   deletePhoto,
@@ -134,4 +173,5 @@ module.exports = {
   getUserPhotos,
   getPhotoById,
   updatePhoto,
+  likePhoto,
 };
