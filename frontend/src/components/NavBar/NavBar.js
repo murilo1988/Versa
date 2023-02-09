@@ -9,19 +9,19 @@ function NavBar() {
   return (
     <nav className={styles.Navbar}>
       <div className={styles.Navbar_brand}>
-        <NavLink>
+        <NavLink to="/">
           <h3>Versa</h3>
         </NavLink>
       </div>
       <div className={styles.Navbar_links}>
         <div>
-          <NavLink>Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </div>
         <div>
-          <NavLink>Sign in</NavLink>
+          <NavLink to="/login">Sign in</NavLink>
         </div>
         <div>
-          <NavLink>Sign up</NavLink>
+          <NavLink to="/register">Sign up</NavLink>
         </div>
       </div>
     </nav>

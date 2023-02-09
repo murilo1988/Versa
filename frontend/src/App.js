@@ -1,9 +1,25 @@
 import "./App.css";
 
+//Router
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// Components
+import NavBar from "./components/NavBar/NavBar";
+// Pages
+import Home from "./pages/Home/Home";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
+
 function App() {
   return (
     <div className="App">
-      <h1>Versa</h1>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

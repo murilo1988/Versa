@@ -1,7 +1,3 @@
-/* * {
-    border: 2px solid black;
-} */
-
 .Navbar {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -15,20 +11,27 @@
 .Navbar_brand h3 {
     font-size: 1.5em;
     padding: 0;
-    margin-left: 20px;
+    margin-left: 10px;
+    align-items: center;
 }
 
 .Navbar_links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     align-items: center;
-    gap: 40px;
-    margin-right: 20px;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.Navbar_links div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .Navbar a {
     color: #f7efe5;
     text-decoration: none;
     font-size: 1em;
+    padding: 0 15px;
 }
