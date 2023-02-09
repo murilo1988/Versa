@@ -1,0 +1,13 @@
+:root {
+    --bg-color: #fffbf5;
+    --color-h1: #674188;
+}
+
+body {
+    font-family: "PT Serif", serifm, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--color-h1);
+}
