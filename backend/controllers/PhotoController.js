@@ -213,12 +213,6 @@ const searchPhoto = async (req, res) => {
   res.status(200).json(photos);
 };
 
-const commentDelete = async (req, res) => {
-  const { id } = req.params;
-  const { comment } = req.body;
-
-  const reqUser = req.user;
-};
 module.exports = {
   insertPhoto,
   deletePhoto,

@@ -1,10 +1,10 @@
 const User = require("../models/User");
 
-const mongoose = require("mongoose");
-
 const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
+
+const { default: mongoose } = require("mongoose");
 
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -28,17 +28,15 @@ const register = async (req, res) => {
   }
 
   // Generate password Hash
-  const generatePasswordHash = async (password) => {
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(password, salt);
-    return passwordHash;
-  };
+
+  const salt = await bcrypt.genSalt();
+  const passwordHash = await bcrypt.hash(password, salt);
 
   //create User
   const newUSer = await User.create({
     name,
     email,
-    password: generatePasswordHash(),
+    password: passwordHash,
   });
 
   //if User was created successfully, return token
