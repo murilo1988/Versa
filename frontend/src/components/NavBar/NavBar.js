@@ -1,37 +1,52 @@
-import React from "react";
+import React from 'react'
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from 'react-router-dom'
 
+// icons
+import {
+  BsSearch,
+  BsHouseDoorFill,
+  BsFillPersonFill,
+  BsFillCameraFill,
+} from 'react-icons/bs'
 // CSS
-import styles from "./NavBar.module.css";
+import styles from './NavBar.module.css'
 
 function NavBar() {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navbar_brand}>
-        <NavLink to="/">
-          <h3>Versa</h3>
-        </NavLink>
-      </div>
-      <div className={styles.navbar_links}>
-        <div>
-          <span>
-            <NavLink to="/">Home</NavLink>
-          </span>
+    <>
+      <nav className={styles.nav}>
+        <div className={styles.nav_brand}>
+          <Link to='/'>
+            <h3>Versa</h3>
+          </Link>
         </div>
         <div>
-          <span>
-            <NavLink to="/login">Sign in</NavLink>
-          </span>
+          <form className={styles.nav_search_form}>
+            <BsSearch />
+            <input type='text' />
+          </form>
         </div>
-        <div>
-          <span>
-            <NavLink to="/register">Sign up</NavLink>
-          </span>
+        <div className={styles.nav_links}>
+          <div>
+            <span>
+              <NavLink to='/'>Home</NavLink>
+            </span>
+          </div>
+          <div>
+            <span>
+              <NavLink to='/login'>Sign in</NavLink>
+            </span>
+          </div>
+          <div>
+            <span>
+              <NavLink to='/register'>Sign up</NavLink>
+            </span>
+          </div>
         </div>
-      </div>
-    </nav>
-  );
+      </nav>
+    </>
+  )
 }
 
-export default NavBar;
+export default NavBar

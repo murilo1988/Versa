@@ -1,0 +1,15 @@
+footer {
+    color: #fffbf5;
+    display: grid;
+    grid-template-rows: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+}
+.name_copy {
+    font-size: 1.2em;
+}
+
+.name_copy sup {
+    font-size: 1.2em;
+}

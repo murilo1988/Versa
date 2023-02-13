@@ -104,7 +104,7 @@ const update = async (req, res) => {
   }
 
   if (password) {
-    user.password = generatePasswordHash();
+    user.password = password;
   }
 
   if (profileImage) {

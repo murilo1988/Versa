@@ -13,7 +13,6 @@ const {
   likePhoto,
   commentInsert,
   searchPhoto,
-  commentDelete,
 } = require("../controllers/PhotoController");
 
 // middlewares
