@@ -6,3 +6,34 @@ body {
 
     background-color: #ffff;
 }
+
+.active {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+input {
+    background-color: #eff3f4;
+    border: none;
+    padding: 0.8em 0.9em;
+    border-radius: 255px;
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+a {
+    text-decoration: none;
+}
+
+input::placeholder {
+    color: #969696;
+}
