@@ -8,6 +8,7 @@ import {
   BsHouseDoorFill,
   BsFillPersonFill,
   BsFillCameraFill,
+  BsJustify,
 } from 'react-icons/bs'
 // CSS
 import styles from './NavBar.module.css'
@@ -24,7 +25,7 @@ function NavBar() {
         <div>
           <form className={styles.nav_search_form}>
             <BsSearch />
-            <input type='text' />
+            <input type='text' placeholder='Pesquisar' />
           </form>
         </div>
         <div className={styles.nav_links}>
@@ -36,6 +37,9 @@ function NavBar() {
           </div>
           <div>
             <NavLink to='/register'>Sign up</NavLink>
+          </div>
+          <div className={styles.dropdown_menu}>
+            <BsJustify />
           </div>
         </div>
       </nav>
