@@ -1,10 +1,10 @@
 footer {
-    color: #fffbf5;
+    color: #ffff;
     display: grid;
     grid-template-rows: 150px;
     align-items: center;
     justify-content: center;
-    background-color: #121212;
+    background-color: #272c30;
 }
 .name_copy {
     font-size: 1.2em;
