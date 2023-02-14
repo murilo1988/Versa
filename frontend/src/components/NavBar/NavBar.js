@@ -18,7 +18,7 @@ function NavBar() {
       <nav className={styles.nav}>
         <div className={styles.nav_brand}>
           <Link to='/'>
-            <h3>Versa</h3>
+            <strong>Versa</strong>
           </Link>
         </div>
         <div>
@@ -28,20 +28,14 @@ function NavBar() {
           </form>
         </div>
         <div className={styles.nav_links}>
+          {/* <div>
+            <NavLink to='/'>Home</NavLink>
+          </div> */}
           <div>
-            <span>
-              <NavLink to='/'>Home</NavLink>
-            </span>
+            <NavLink to='/login'>Sign in</NavLink>
           </div>
           <div>
-            <span>
-              <NavLink to='/login'>Sign in</NavLink>
-            </span>
-          </div>
-          <div>
-            <span>
-              <NavLink to='/register'>Sign up</NavLink>
-            </span>
+            <NavLink to='/register'>Sign up</NavLink>
           </div>
         </div>
       </nav>
