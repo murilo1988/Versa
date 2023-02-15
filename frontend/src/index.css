@@ -9,6 +9,7 @@ body {
 
 .active {
     font-weight: bold;
+    /* color: #f9aa33; */
 }
 
 form {
@@ -23,7 +24,7 @@ label {
 }
 
 input {
-    background-color: #eff3f4;
+    background-color: #dfe4ea8d;
     border: none;
     padding: 0.8em 0.9em;
     border-radius: 255px;
@@ -35,5 +36,53 @@ a {
 }
 
 input::placeholder {
-    color: #969696;
+    color: #7e7e7e;
+    font-size: 1em;
+}
+
+.btn_primary,
+input[type="submit"] {
+    font-size: 1em;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+input:disabled {
+    cursor: not-allowed;
+    background-color: #f1f2f6;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+    font-size: 1em;
+}
+input[type="email"] {
+    font-size: 1em;
+    margin-top: 0.8em;
+}
+input[type="password"] {
+    font-size: 1em;
+    margin-top: 0.8em;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    opacity: 1;
+}
+
+.btn_secondary {
+    background-color: transparent;
+    color: #2f3542;
+    outline-color: #2f3542;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn_cancel {
+    background-color: #2f3542;
+    color: #ffffff;
+}
+
+.hide {
+    display: none;
 }
