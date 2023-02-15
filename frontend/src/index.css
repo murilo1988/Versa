@@ -54,14 +54,15 @@ input:disabled {
 
 input[type="submit"] {
     margin-top: 1em;
-    font-size: 1em;
+    font-size: 1.4em;
+    padding: 0.4em 0;
 }
 input[type="email"] {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 0.8em;
 }
 input[type="password"] {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 0.8em;
 }
 

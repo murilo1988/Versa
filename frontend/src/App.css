@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 20% 1fr 20%;
-    min-height: 80vh;
+    min-height: 90vh;
     margin-bottom: 5em;
     border: 1px solid rgba(0, 0, 0, 0.085);
     margin: 0 auto;
@@ -11,4 +11,18 @@
 }
 .section_right {
     border-left: 1px solid rgba(0, 0, 0, 0.085);
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        min-height: 90vh;
+        grid-template-columns: 329px;
+        justify-content: center;
+    }
+    .section_left {
+        display: none;
+    }
+    .section_right {
+        display: none;
+    }
 }

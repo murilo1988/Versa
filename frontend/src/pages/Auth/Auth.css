@@ -1,15 +1,37 @@
 .login_box {
-    width: 90%;
-    height: 60vh;
+    display: grid;
+    width: 400px;
+    grid-template-rows: 100px 1fr;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 100px;
     text-align: center;
-    margin: 0 auto;
+    margin: 2em auto;
 }
+.register_box {
+    display: grid;
+    width: 400px;
+    grid-template-rows: 100px 1fr;
+    margin: 0.8em auto;
+
+    text-align: center;
+    margin: 2em auto;
+}
+
+.subtitle_register {
+    font-size: 1.8em;
+    font-weight: bold;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.085); */
+    margin-bottom: 1.5em;
+}
+.subtitle_login {
+    font-size: 1.8em;
+    font-weight: bold;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.085); */
+    margin-bottom: 1.5em;
+}
+
 .form input[type="text"] {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 0.8em;
 }
 
@@ -22,17 +44,21 @@
     opacity: 1;
 }
 
-.register_box {
-    width: 90%;
-    height: 60vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
+.go_to_login {
+    text-align: left;
+    padding-left: 5px;
+    font-size: 1.1em;
+    padding-top: 2em;
 }
-
 /* * {
     border: 1px solid red;
 } */
+
+@media screen and (max-width: 778px) {
+    .login_box {
+        width: 90%;
+    }
+    .register_box {
+        width: 90%;
+    }
+}

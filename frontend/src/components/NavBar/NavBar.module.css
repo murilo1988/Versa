@@ -5,8 +5,8 @@
 .nav {
     display: grid;
 
-    grid-template-columns: 20% 363px 20%;
-    grid-template-rows: 60px;
+    grid-template-columns: 20% 411px 20%;
+    grid-template-rows: 80px;
     align-items: center;
     justify-content: space-between;
     gap: 0.4em;
@@ -41,6 +41,9 @@
 .nav_search_form {
     position: relative;
 }
+.nav_search_form input {
+    font-size: 0.9em;
+}
 .nav_search_form svg {
     position: absolute;
     right: 20px;
@@ -60,7 +63,7 @@
     display: none;
 }
 
-@media screen and (max-width: 738px) {
+@media screen and (max-width: 778px) {
     .nav {
         display: grid;
 
@@ -76,6 +79,9 @@
     .nav_search_form input {
         width: 100%;
         padding-left: 1.5em;
+    }
+    .nav_search_form {
+        margin-left: 5px;
     }
 
     .dropdown_menu {

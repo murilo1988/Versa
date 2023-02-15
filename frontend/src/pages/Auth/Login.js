@@ -2,6 +2,7 @@ import './Auth.css'
 
 //Hooks
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Login() {
   const handleSubmit = e => {
@@ -9,10 +10,10 @@ function Login() {
   }
   return (
     <div className='login_box'>
-      <p className='subtitle'>Entre para ver as fotos do seus amigos.</p>
+      <p className='subtitle_login'>Entre para ver as fotos do seus amigos.</p>
       <form className='form' onSubmit={handleSubmit}>
+        <input type='text' placeholder='Nome' />
         <input type='email' placeholder='E-mail' />
-        <input type='password' placeholder='Senha' />
 
         <input type='submit' value='Entrar' />
       </form>
