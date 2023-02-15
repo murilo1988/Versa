@@ -11,9 +11,7 @@ function Register() {
   }
   return (
     <div className='register_box'>
-      <p className='register_subtitle'>
-        Cadastre-se para ver as fotos do seus amigos.
-      </p>
+      <p className='subtitle'>Cadastre-se para ver as fotos do seus amigos.</p>
       <form className='form' onSubmit={handleSubmit}>
         <input type='text' placeholder='Nome' />
         <input type='email' placeholder='E-mail' />
