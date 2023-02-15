@@ -16,11 +16,13 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <div className='container'>
+          <section className='section_left'></section>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
           </Routes>
+          <section className='section_right'></section>
         </div>
         <Footer />
       </BrowserRouter>
