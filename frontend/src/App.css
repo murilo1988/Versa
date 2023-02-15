@@ -1,4 +1,14 @@
 .container {
-    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    min-height: 80vh;
     margin-bottom: 5em;
+    border: 1px solid rgba(0, 0, 0, 0.085);
+    margin: 0 auto;
+}
+.section_left {
+    border-right: 1px solid rgba(0, 0, 0, 0.085);
+}
+.section_right {
+    border-left: 1px solid rgba(0, 0, 0, 0.085);
 }
