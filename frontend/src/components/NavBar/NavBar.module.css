@@ -27,14 +27,20 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+
     font-size: 1.2em;
 }
 
 .nav_search_form input {
-    width: 80%;
+    width: 100%;
+    padding-left: 1.5em;
+}
+.nav_search_form {
+    position: relative;
 }
 .nav_search_form svg {
+    position: absolute;
+    right: 20px;
     cursor: pointer;
 }
 
@@ -42,7 +48,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
     font-size: 1em;
 }
 
