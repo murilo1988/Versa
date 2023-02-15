@@ -4,6 +4,7 @@
 
 .nav {
     display: grid;
+
     grid-template-columns: 30% 1fr 30%;
     grid-template-rows: 60px;
     align-items: center;
@@ -48,10 +49,29 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 30px;
     font-size: 1em;
 }
 
 .dropdown_menu {
     display: none;
+}
+
+@media screen and (max-width: 707px) {
+    .nav {
+        display: grid;
+        padding-left: 2px;
+        grid-template-columns: 25% 1fr 20%;
+        gap: 0;
+    }
+    .nav_links a:nth-child(n + 1) {
+        display: none;
+    }
+
+    .dropdown_menu {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.6em;
+        padding-right: 15%;
+    }
 }
