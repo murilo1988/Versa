@@ -10,7 +10,7 @@ function Login() {
   return (
     <div className='login_box'>
       <p className='login_subtitle'>Entre para ver as fotos do seus amigos.</p>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <input type='email' placeholder='E-mail' />
         <input type='password' placeholder='Senha' />
 

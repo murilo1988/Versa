@@ -14,7 +14,7 @@ function Register() {
       <p className='register_subtitle'>
         Cadastre-se para ver as fotos do seus amigos.
       </p>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <input type='text' placeholder='Nome' />
         <input type='email' placeholder='E-mail' />
         <input type='password' placeholder='Senha' />
