@@ -21,7 +21,7 @@ export const resquestConfig = (method, data, token = null, image = null) => {
       method,
       body: JSON.stringify(data),
       headers: {
-        'content-Type': 'aplication/json',
+        'Content-Type': 'application/json',
       },
     };
   }
