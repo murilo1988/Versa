@@ -1,8 +1,8 @@
-import { api, requestConfig } from '../utils/config';
+import { api, resquestConfig } from '../utils/config';
 
 // Register an user
 const register = async data => {
-  const config = requestConfig('POST', data);
+  const config = resquestConfig('POST', data);
 
   try {
     const res = await fetch(api + '/users/register', config)
@@ -21,4 +21,4 @@ const authService = {
   register,
 };
 
-export default { authService };
+export default authService;
