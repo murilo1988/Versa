@@ -1,24 +1,24 @@
-import './Auth.css';
+import "./Auth.css";
 // Components
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //Hooks
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 // Redux
-import { register, reset } from '../../slices/authSlice';
+import { register, reset } from "../../slices/authSlice";
 
 function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   // to access and use redux functions
   const dispatch = useDispatch();
 
-  // import from authSlice
+  // import from authSlice (redux store)
   const { loading, error } = useSelector(state => state.auth);
 
   const handleSubmit = e => {
