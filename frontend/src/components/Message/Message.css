@@ -1,16 +1,17 @@
 .message {
     border-radius: 20px;
     margin: 0;
-    padding: 5px 10px;
+    padding: 2px 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #000;
+    margin-top: 25px;
 }
 
 .message.error {
-    color: #b3005e;
-    background-color: #fb257797;
+    color: #eb1e1e;
+    background-color: #fb25775c;
     border-color: #e0144ab9;
 }
 

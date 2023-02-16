@@ -1,6 +1,7 @@
 import "./Auth.css";
 // Components
 import { Link } from "react-router-dom";
+import Message from "../../components/Message/Message";
 
 //Hooks
 import { useState, useEffect } from "react";
@@ -19,9 +20,9 @@ function Register() {
   const dispatch = useDispatch();
 
   // import from authSlice (redux store)
-  const { loading, error } = useSelector(state => state.auth);
+  const { loading, error } = useSelector((state) => state.auth);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const user = {
       name,
@@ -47,28 +48,31 @@ function Register() {
         <input
           type='text'
           placeholder='Nome'
-          onChange={e => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           value={name}
         />
         <input
           type='email'
           placeholder='E-mail'
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
         <input
           type='password'
           placeholder='Senha'
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
         <input
           type='password'
           placeholder='Confirme a senha'
-          onChange={e => setConfirmPassword(e.target.value)}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           value={confirmPassword}
         />
-        <input type='submit' value='Cadastrar' onClick={handleSubmit} />
+        {!loading && <input type='submit' value='Cadastrar' />}
+        {loading && <input type='submit' disabled value='Aguarde...' />}
+        {error && <Message msg={error} type='error' />}
+
         <p className='go_to_login'>
           Já é cadastrado? <Link to='/login'>Clique aqui!</Link>
         </p>

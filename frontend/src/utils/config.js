@@ -1,8 +1,8 @@
-export const api = 'http://localhost:5000/api';
+export const api = "http://localhost:5000/api";
 
-export const uploads = 'http://localhost:5000/uploads';
+export const uploads = "http://localhost:5000/uploads";
 
-export const resquestConfig = (method, data, token = null, image = null) => {
+export const requestConfig = (method, data, token = null, image = null) => {
   let config;
 
   if (image) {
@@ -11,7 +11,7 @@ export const resquestConfig = (method, data, token = null, image = null) => {
       body: data,
       headers: {},
     };
-  } else if (method === 'DELETE' || data === null) {
+  } else if (method === "DELETE" || data === null) {
     config = {
       method,
       headers: {},
@@ -21,7 +21,7 @@ export const resquestConfig = (method, data, token = null, image = null) => {
       method,
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
   }
