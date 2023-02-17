@@ -1,5 +1,5 @@
 .message {
-    border-radius: 20px;
+    border-radius: 25px;
     margin: 0;
     padding: 2px 2px;
     display: flex;
@@ -7,12 +7,13 @@
     align-items: center;
     border: 1px solid #000;
     margin-top: 25px;
+    font-size: 0.9em;
 }
 
 .message.error {
     color: #eb1e1e;
-    background-color: #fb25775c;
-    border-color: #e0144ab9;
+    background-color: #fc16165c;
+    border-color: #e0144a3e;
 }
 
 .message.success {
