@@ -16,7 +16,7 @@
 }
 
 .nav_links a {
-    font-size: 1.6em;
+    font-size: 1.2em;
     display: flex;
     border: none;
 }
@@ -67,17 +67,6 @@
     display: none;
 }
 
-.submenu_dropdown {
-    display: none; /* esconde o submenu dropdown */
-    flex-direction: row;
-    position: absolute;
-
-    width: 20%;
-    top: 16%;
-    right: 1px;
-    margin: 0 auto;
-}
-
 @media screen and (max-width: 778px) {
     .nav {
         display: grid;
@@ -104,51 +93,8 @@
 
     .dropdown {
         display: flex;
-        font-size: 1em;
-    }
-
-    .menu_dropdown {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-
-        list-style-type: none;
-    }
-    .menu-dropdown .menu_icon {
-        position: relative;
-    }
-    .menu_dropdown .menu_icon:hover {
-        /* efeito hover nos itens do menu principal */
-        background-color: #575fcf8e;
-        color: #ffff;
-    }
-    .menu_dropdown .menu_icon a {
-        text-decoration: none;
-        display: flex;
-    }
-
-    .menu_item:hover .submenu_dropdown {
-        display: flex;
-    }
-    .menu_item {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    .submenu_dropdown .menu_item a {
-        font-size: 1em;
-        background-color: #575fcf8e;
-        color: #ffff;
-        width: 100px;
-    }
-    .submenu_dropdown .menu_item a:hover {
-        /* efeito hover nos itens do submenu dropdown */
-        background-color: gray;
-    }
-    .menu_dropdown .menu_icon:hover .submenu_dropdown {
-        /*efeito hover para alterar a cor de fundo*/
-        background-color: #575fcf8e;
-        display: flex; /* exibir o submenu dropdown */
+        justify-content: center;
+        margin-right: 20px;
+        font-size: 1.3em;
     }
 }

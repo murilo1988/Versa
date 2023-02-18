@@ -45,22 +45,17 @@ function NavBar() {
                 <NavLink to='/'>
                   <BsHouseDoorFill />
                 </NavLink>
-                <div className={styles.dropdown}>
-                  <div className={styles.menu_dropdown}>
-                    <div className={styles.menu_icon}>
-                      <NavLink>
-                        <BsJustify />
-                      </NavLink>
-                      <div className={styles.submenu_dropdown}>
-                        <div className={styles.menu_item}>
-                          <NavLink>Home</NavLink>
-                          <NavLink>Photos</NavLink>
-                          <NavLink>Settings</NavLink>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div className={styles.dropdown}>
+                <span className={styles.nav_icons}>
+                  <BsJustify />
+                </span>
+
+                {/* <div className={styles.dropdown_content}>
+                  <NavLink>Home</NavLink>
+                  <NavLink>Photos</NavLink>
+                  <NavLink>Settings</NavLink>
+                </div> */}
               </div>
             </>
           ) : (
