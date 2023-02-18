@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link } from "react-router-dom";
 
 // icons
 import {
@@ -9,11 +9,21 @@ import {
   BsFillPersonFill,
   BsFillCameraFill,
   BsJustify,
-} from 'react-icons/bs'
+} from "react-icons/bs";
 // CSS
-import styles from './NavBar.module.css'
+import styles from "./NavBar.module.css";
+
+// Hooks
+import { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const { auth } = useAuth();
+
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <>
       <nav className={styles.nav}>
@@ -29,22 +39,44 @@ function NavBar() {
           </form>
         </div>
         <div className={styles.nav_links}>
-          {/* <div>
-            <NavLink to='/'>Home</NavLink>
-          </div> */}
-          <div>
-            <NavLink to='/login'>Login</NavLink>
-          </div>
-          <div>
-            <NavLink to='/register'>Sign up</NavLink>
-          </div>
-          <div className={styles.dropdown_menu}>
-            <BsJustify />
-          </div>
+          {auth ? (
+            <>
+              <div className={styles.nav_icons}>
+                <NavLink to='/'>
+                  <BsHouseDoorFill />
+                </NavLink>
+                <div className={styles.dropdown}>
+                  <div className={styles.menu_dropdown}>
+                    <div className={styles.menu_icon}>
+                      <NavLink>
+                        <BsJustify />
+                      </NavLink>
+                      <div className={styles.submenu_dropdown}>
+                        <div className={styles.menu_item}>
+                          <NavLink>Home</NavLink>
+                          <NavLink>Photos</NavLink>
+                          <NavLink>Settings</NavLink>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div>
+                <NavLink to='/login'>Login</NavLink>
+              </div>
+              <div>
+                <NavLink to='/register'>Sign up</NavLink>
+              </div>
+            </>
+          )}
         </div>
       </nav>
     </>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

@@ -6,13 +6,19 @@
     display: grid;
 
     grid-template-columns: 20% 411px 20%;
-    grid-template-rows: 80px;
+    grid-template-rows: 100px;
     align-items: center;
     justify-content: space-between;
     gap: 0.4em;
     padding: 0.4em 0;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.085);
+}
+
+.nav_links a {
+    font-size: 1.6em;
+    display: flex;
+    border: none;
 }
 
 .nav a {
@@ -53,14 +59,23 @@
 .nav_links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    gap: 30px;
-    font-size: 1em;
-    padding-right: 20px;
+    justify-content: space-around;
+    font-size: 1.2em;
 }
 
-.dropdown_menu {
+.dropdown {
     display: none;
+}
+
+.submenu_dropdown {
+    display: none; /* esconde o submenu dropdown */
+    flex-direction: row;
+    position: absolute;
+
+    width: 20%;
+    top: 16%;
+    right: 1px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 778px) {
@@ -70,6 +85,7 @@
         grid-template-columns: 20% 55% 20%;
         gap: 0;
     }
+
     .nav_brand {
         padding-left: 5px;
     }
@@ -84,10 +100,55 @@
         margin-left: 5px;
     }
 
-    .dropdown_menu {
+    /*menu dropdown*/
+
+    .dropdown {
         display: flex;
-        cursor: pointer;
-        font-size: 1.6em;
-        padding-right: 25%;
+        font-size: 1em;
+    }
+
+    .menu_dropdown {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+
+        list-style-type: none;
+    }
+    .menu-dropdown .menu_icon {
+        position: relative;
+    }
+    .menu_dropdown .menu_icon:hover {
+        /* efeito hover nos itens do menu principal */
+        background-color: #575fcf8e;
+        color: #ffff;
+    }
+    .menu_dropdown .menu_icon a {
+        text-decoration: none;
+        display: flex;
+    }
+
+    .menu_item:hover .submenu_dropdown {
+        display: flex;
+    }
+    .menu_item {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .submenu_dropdown .menu_item a {
+        font-size: 1em;
+        background-color: #575fcf8e;
+        color: #ffff;
+        width: 100px;
+    }
+    .submenu_dropdown .menu_item a:hover {
+        /* efeito hover nos itens do submenu dropdown */
+        background-color: gray;
+    }
+    .menu_dropdown .menu_icon:hover .submenu_dropdown {
+        /*efeito hover para alterar a cor de fundo*/
+        background-color: #575fcf8e;
+        display: flex; /* exibir o submenu dropdown */
     }
 }
