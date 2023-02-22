@@ -21,8 +21,13 @@ import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const { auth } = useAuth();
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   const { user } = useSelector((state) => state.auth);
+
+  const handleDropdownMenu = () => {
+    setOpenDropdown(!openDropdown);
+  };
 
   return (
     <>
@@ -47,15 +52,20 @@ function NavBar() {
                 </NavLink>
               </div>
               <div className={styles.dropdown}>
-                <span className={styles.nav_icons}>
-                  <BsJustify />
-                </span>
-
-                {/* <div className={styles.dropdown_content}>
-                  <NavLink>Home</NavLink>
-                  <NavLink>Photos</NavLink>
-                  <NavLink>Settings</NavLink>
-                </div> */}
+                <button onClick={(e) => handleDropdownMenu(e.target)}>
+                  <span className={styles.nav_icons}>
+                    <BsJustify />
+                  </span>
+                </button>
+                {openDropdown && (
+                  <div className={styles.dropdown_content}>
+                    <div className={styles.dropdown_itens}>
+                      <NavLink>Home</NavLink>
+                      <NavLink>Photos</NavLink>
+                      <NavLink>Settings</NavLink>
+                    </div>
+                  </div>
+                )}
               </div>
             </>
           ) : (
