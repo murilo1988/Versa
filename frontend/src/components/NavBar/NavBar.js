@@ -9,6 +9,8 @@ import {
   BsFillPersonFill,
   BsFillCameraFill,
   BsJustify,
+  BsBoxArrowRight,
+  BsXLg,
 } from "react-icons/bs";
 // CSS
 import styles from "./NavBar.module.css";
@@ -50,6 +52,23 @@ function NavBar() {
                 <NavLink to='/'>
                   <BsHouseDoorFill />
                 </NavLink>
+                {user && (
+                  <div>
+                    <NavLink to={`/users/${user.id}`}>
+                      <BsFillCameraFill />
+                    </NavLink>
+                  </div>
+                )}
+                <div>
+                  <NavLink to='/profile'>
+                    <BsFillPersonFill />
+                  </NavLink>
+                </div>
+                <div>
+                  <NavLink to='/logout'>
+                    <BsXLg />
+                  </NavLink>
+                </div>
               </div>
               <div className={styles.dropdown}>
                 <button onClick={(e) => handleDropdownMenu(e.target)}>
@@ -62,7 +81,8 @@ function NavBar() {
                     <div className={styles.dropdown_itens}>
                       <NavLink>Home</NavLink>
                       <NavLink>Photos</NavLink>
-                      <NavLink>Settings</NavLink>
+                      <NavLink>Profile</NavLink>
+                      <NavLink>Logout</NavLink>
                     </div>
                   </div>
                 )}
