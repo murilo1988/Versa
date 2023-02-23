@@ -53,8 +53,19 @@
     font-size: 1.1em;
     padding-top: 2em;
 }
+.go_to_register {
+    text-align: center;
+    padding-left: 5px;
+    font-size: 1.1em;
+    margin-bottom: 100px;
+}
 
 .go_to_login a {
+    text-decoration: none;
+    color: #575fcf;
+    font-weight: bold;
+}
+.go_to_register a {
     text-decoration: none;
     color: #575fcf;
     font-weight: bold;
