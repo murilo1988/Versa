@@ -55,30 +55,28 @@
     cursor: pointer;
 }
 
+.nav_links {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+}
 .nav_icons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-evenly;
+    margin-right: 30px;
+
+    width: 100%;
     gap: 20px;
 }
 
-.nav_links {
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.1em;
-    padding-left: 5px;
-
-    margin-right: 10px;
-}
-
-.in_icons {
+.in_up {
     display: flex;
     flex-direction: row;
     width: 100%;
     font-size: 0.8em;
-    justify-content: flex-end;
-    gap: 15px;
+    justify-content: space-around;
+    margin-right: 20px;
 }
 
 .nav_links button {
@@ -96,12 +94,11 @@
     display: none;
 }
 
-@media screen and (max-width: 778px) {
+@media screen and (max-width: 818px) {
     .nav {
         display: grid;
 
         grid-template-columns: 20% 55% 20%;
-        gap: 0;
     }
 
     .nav_brand {
@@ -110,7 +107,7 @@
     .nav_icons a:nth-child(1) {
         display: none;
     }
-    .in_icons a:nth-last-child(-n + 3) {
+    .in_up a:nth-last-child(-n + 3) {
         display: none;
     }
 
@@ -118,9 +115,10 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-
         font-size: 1.2em;
+        padding-right: 30px;
     }
+
     .nav_search_form input {
         width: 100%;
         padding-left: 1em;
@@ -136,14 +134,14 @@
         flex-direction: row;
 
         align-items: center;
-        margin-right: 30px;
+        margin-right: 50px;
 
         font-size: 1.3em;
     }
 
     .dropdown_content {
         display: block;
-        position: fixed;
+        position: absolute;
         width: 100%;
 
         left: 0;
@@ -155,8 +153,7 @@
         color: #ffff;
         background-color: #575fcf;
         flex-direction: row;
-        justify-content: space-evenly;
-        transition: all 1s;
+        justify-content: space-around;
     }
     .dropdown_itens_login {
         display: flex;
@@ -170,10 +167,10 @@
         align-items: center;
         padding: 5px;
         width: 100px;
-
         font-size: 0.7em;
         color: #fff;
         height: 30px;
+        width: 100%;
     }
 
     .dropdown_itens a:hover {

@@ -23,8 +23,10 @@ const register = async (data) => {
 const logout = () => {
   localStorage.removeItem("user");
 };
+
+// login an user
 const login = async (data) => {
-  const config = requestConfig("Post", data);
+  const config = requestConfig("POST", data);
 
   try {
     const res = await fetch(api + "/users/login", config)

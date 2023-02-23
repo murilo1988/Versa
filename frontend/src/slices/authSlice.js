@@ -27,11 +27,11 @@ export const register = createAsyncThunk(
 );
 
 // logout an user
-
 export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
 
+// Sign in an user
 export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   const data = await authService.login(user);
 
@@ -76,11 +76,21 @@ export const authSlice = createSlice({
         state.error = null;
         state.user = null;
       })
+      .addCase(login.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.success = true;
         state.error = null;
-        state.user = true;
+        state.user = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.loading = false;
+        state.success = false;
+        state.error = action.payload;
+        state.user = null;
       });
   },
 });

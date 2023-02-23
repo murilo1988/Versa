@@ -3,6 +3,7 @@ import "./Auth.css";
 //Components
 import { Link } from "react-router-dom";
 import Message from "../../components/Message/Message";
+
 //Hooks
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,6 +18,7 @@ function Login() {
   const dispatch = useDispatch();
 
   const { loading, error } = useSelector((state) => state.auth);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,21 +34,22 @@ function Login() {
   useEffect(() => {
     dispatch(reset());
   }, [dispatch]);
+
   return (
     <div className='login_box'>
       <p className='subtitle_login'>Entre para ver as fotos do seus amigos.</p>
       <form className='form' onSubmit={handleSubmit}>
         <input
-          type='email'
+          type='text'
           placeholder='E-mail'
           onChange={(e) => setEmail(e.target.value)}
-          value={email}
+          value={email || ""}
         />
         <input
           type='password'
-          placeholder='Password'
+          placeholder='Senha'
           onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          value={password || ""}
         />
 
         {!loading && <input type='submit' value='Entrar' />}

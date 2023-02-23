@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -104,9 +104,9 @@ function NavBar() {
             </>
           ) : (
             <>
-              <div className={styles.in_icons}>
+              <div className={styles.in_up}>
                 <div>
-                  <NavLink to='/login'>Login</NavLink>
+                  <NavLink to='/login'>Sign in</NavLink>
                 </div>
                 <div>
                   <NavLink to='/register'>Sign up</NavLink>
@@ -115,7 +115,7 @@ function NavBar() {
               <div className={styles.dropdown}>
                 <div>
                   <button onClick={(e) => handleDropdownMenu(e.target)}>
-                    <NavLink className={styles.in_icons}>
+                    <NavLink className={styles.nav_icons}>
                       <BsJustify />
                     </NavLink>
                   </button>
