@@ -9,7 +9,6 @@ import {
   BsFillPersonFill,
   BsFillCameraFill,
   BsJustify,
-  BsBoxArrowRight,
   BsXLg,
 } from "react-icons/bs";
 // CSS
@@ -21,14 +20,27 @@ import { useAuth } from "../../hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+//Redux
+import { logout, reset } from "../../slices/authSlice";
+
 function NavBar() {
   const { auth } = useAuth();
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const handleDropdownMenu = () => {
     setOpenDropdown(!openDropdown);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+
+    navigate("/login");
   };
 
   return (
@@ -65,24 +77,26 @@ function NavBar() {
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to='/logout'>
+                  <NavLink onClick={handleLogout}>
                     <BsXLg />
                   </NavLink>
                 </div>
               </div>
               <div className={styles.dropdown}>
-                <button onClick={(e) => handleDropdownMenu(e.target)}>
-                  <span className={styles.nav_icons}>
-                    <BsJustify />
-                  </span>
-                </button>
+                <div>
+                  <button onClick={(e) => handleDropdownMenu(e.target)}>
+                    <NavLink className={styles.nav_icons}>
+                      <BsJustify />
+                    </NavLink>
+                  </button>
+                </div>
                 {openDropdown && (
                   <div className={styles.dropdown_content}>
                     <div className={styles.dropdown_itens}>
-                      <NavLink>Home</NavLink>
+                      <NavLink> Home</NavLink>
                       <NavLink>Photos</NavLink>
                       <NavLink>Profile</NavLink>
-                      <NavLink>Logout</NavLink>
+                      <NavLink onClick={handleLogout}>Logout</NavLink>
                     </div>
                   </div>
                 )}
@@ -90,11 +104,30 @@ function NavBar() {
             </>
           ) : (
             <>
-              <div>
-                <NavLink to='/login'>Login</NavLink>
+              <div className={styles.in_icons}>
+                <div>
+                  <NavLink to='/login'>Login</NavLink>
+                </div>
+                <div>
+                  <NavLink to='/register'>Sign up</NavLink>
+                </div>
               </div>
-              <div>
-                <NavLink to='/register'>Sign up</NavLink>
+              <div className={styles.dropdown}>
+                <div>
+                  <button onClick={(e) => handleDropdownMenu(e.target)}>
+                    <NavLink className={styles.in_icons}>
+                      <BsJustify />
+                    </NavLink>
+                  </button>
+                </div>
+                {openDropdown && (
+                  <div className={styles.dropdown_content}>
+                    <div className={styles.dropdown_itens}>
+                      <NavLink to='/login'> Sign in</NavLink>
+                      <NavLink to='register'>Sign up</NavLink>
+                    </div>
+                  </div>
+                )}
               </div>
             </>
           )}

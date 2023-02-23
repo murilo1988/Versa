@@ -72,6 +72,15 @@
     margin-right: 10px;
 }
 
+.in_icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 0.8em;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
 .nav_links button {
     border: none;
     background-color: transparent;
@@ -90,7 +99,6 @@
 @media screen and (max-width: 778px) {
     .nav {
         display: grid;
-        z-index: 2;
 
         grid-template-columns: 20% 55% 20%;
         gap: 0;
@@ -100,6 +108,9 @@
         padding-left: 15px;
     }
     .nav_icons a:nth-child(1) {
+        display: none;
+    }
+    .in_icons a:nth-last-child(-n + 3) {
         display: none;
     }
 
@@ -131,25 +142,43 @@
     }
 
     .dropdown_content {
-        transition: all 1s;
         display: block;
         position: fixed;
         width: 100%;
+
         left: 0;
         top: 110px;
-        padding: 10px;
-        background-color: #575fcf;
-        opacity: 1;
     }
 
     .dropdown_itens {
         display: flex;
+        color: #ffff;
+        background-color: #575fcf;
         flex-direction: row;
         justify-content: space-evenly;
+        transition: all 1s;
+    }
+    .dropdown_itens_login {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        transition: all 1s;
     }
     .dropdown_itens a {
-        color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        width: 100px;
+
         font-size: 0.7em;
-        transition: all 1s;
+        color: #fff;
+        height: 30px;
+    }
+
+    .dropdown_itens a:hover {
+        background-color: #3a42b2;
+        color: #fff;
+        transition: 600ms;
     }
 }
