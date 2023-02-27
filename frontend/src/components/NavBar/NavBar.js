@@ -94,9 +94,11 @@ function NavBar() {
                   <div className={styles.dropdown_content}>
                     <div className={styles.dropdown_itens}>
                       <NavLink to='/'> Home</NavLink>
-                      <NavLink>Photos</NavLink>
+                      <NavLink to='/photos'>Photos</NavLink>
                       <NavLink to='/profile'>Profile</NavLink>
-                      <NavLink onClick={handleLogout}>Logout</NavLink>
+                      <NavLink to='/login' onClick={handleLogout}>
+                        Logout
+                      </NavLink>
                     </div>
                   </div>
                 )}
