@@ -1,0 +1,54 @@
+#edit_profile {
+    display: grid;
+    width: 400px;
+    grid-template-rows: 50px 25px 1fr;
+
+    gap: 100px;
+    text-align: center;
+    margin: 2em auto;
+}
+
+.subtitle_profile {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: -70px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.085); */
+}
+
+.form_profile {
+    margin-top: -90px;
+    margin-bottom: 100px;
+}
+
+.form_profile input[type="submit"] {
+    background-color: #3a42b2;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-top: 2em;
+}
+
+.form_profile input {
+    margin-bottom: 10px;
+}
+
+.form_profile input[type="password"] {
+    margin-top: 1px;
+}
+.form_profile span {
+    margin-bottom: 5px;
+}
+
+.profile_image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 778px) {
+    #edit_profile {
+        width: 90%;
+    }
+    .register_box {
+        width: 90%;
+    }
+}
