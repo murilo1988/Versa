@@ -93,9 +93,9 @@ function NavBar() {
                 {openDropdown && (
                   <div className={styles.dropdown_content}>
                     <div className={styles.dropdown_itens}>
-                      <NavLink> Home</NavLink>
+                      <NavLink to='/'> Home</NavLink>
                       <NavLink>Photos</NavLink>
-                      <NavLink>Profile</NavLink>
+                      <NavLink to='/profile'>Profile</NavLink>
                       <NavLink onClick={handleLogout}>Logout</NavLink>
                     </div>
                   </div>
