@@ -15,7 +15,7 @@ function EditProfile() {
       {/* preview da img */}
       <form className='form_profile' onSubmit={handleSubmit}>
         <input type='text' placeholder='Name' />
-        <input type='email' placeholder='E-mail' disable />
+        <input type='email' placeholder='E-mail' disabled />
         <label>
           <span>Imagem do Perfil:</span>
           <input type='file' />
