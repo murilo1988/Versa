@@ -1,8 +1,8 @@
-import { api, requesConfig } from "../utils/config";
+import { api, requestConfig } from "../utils/config";
 
 // Get user details
 const profile = async (data, token) => {
-  const config = requesConfig("GET", data, token);
+  const config = requestConfig("GET", data, token);
 
   try {
     const res = await fetch(api + "/users/profile", config)
@@ -15,8 +15,8 @@ const profile = async (data, token) => {
   }
 };
 
-const useService = {
+const userService = {
   profile,
 };
 
-export default useService;
+export default userService;
